@@ -1,0 +1,22 @@
+异步方法：不需要等待当前方法返回，可以继续执行下面的方法（多线程）
+同步方法：需要等待当前方法返回（单线程）
+
+举例：
+public async Task<int> GetAsyncIntValue(){ //0
+  var result = await GetZero()；//1
+  PrintZero();//2
+  return result;//3
+}
+
+private async Task<int> GetZero(){
+  await (...) // async method
+  return 0;
+}
+
+private void PrintZero(){
+ Console.WriteLine("0");
+}
+执行顺序：1 -> return Task<int> without value -> 2 -> 3 -> return Task<int> withoutvalue -> 1 method return 0 -> 0 method return 0.
+异步方法的好处：可以在不阻塞主线程的情况下，通过多线程的方式获取结果，提升程序运行效率。
+
+参考链接：https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model
