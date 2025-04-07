@@ -21,6 +21,6 @@ private void PrintZero(){
 
 参考链接：https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model
 
-![图片中是微软给出的例子，按照1-8的顺序执行](https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/media/task-asynchronous-programming-model/navigation-trace-async-program.png#lightbox)
+![图片中是微软给出的例子，按照1-8的顺序执行](C#/navigation-trace-async-program.png）
 
 使用体会：在写代码时可以尽量使用异步方法，以提高产品的性能。工作中遇到过这种情况：使用观察者模式，最开始时同步发送事件，导致外层方法一直在等待事件的响应，接口迟迟不返回。使用异步方法统一发送事件，系统性能大大提升。
