@@ -20,3 +20,5 @@ private void PrintZero(){
 异步方法的好处：可以在不阻塞主线程的情况下，通过多线程的方式获取结果，提升程序运行效率。
 
 参考链接：https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/task-asynchronous-programming-model
+
+![图片中是微软给出的例子，按照1-8的顺序执行](https://learn.microsoft.com/zh-cn/dotnet/csharp/asynchronous-programming/media/task-asynchronous-programming-model/navigation-trace-async-program.png#lightbox)
