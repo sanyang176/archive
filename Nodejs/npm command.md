@@ -1,1 +1,1 @@
-npm install
+- npm init 创建初始化package.json文件 
