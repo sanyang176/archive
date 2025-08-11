@@ -1,0 +1,7 @@
+## IOC的作用：
+把互相依赖的service解耦合，如果不使用ioc，需要在使用时实例化对应对象，并且如果不同的service里面都引用了同一个service，耦合严重，还需要注意生命周期的问题。
+有了IOC之后，把所有service的实例都放在IOC容器中，程序初始化的时候实例化所有的service，在service运行时在容器中取出对应的service，这样就可以把各个service解耦合了.
+## AOP：
+注解有before，after，around
+AOP的基本原理是代理模式，使用代理类作为service的替代实现，在代理类里面重写service的方法，在方法中，对父类进行包装，注解会转化为不同类型的类。
+通过 java.lang.reflect.Proxy 动态生成一个代理类，代理类实现目标接口，并在方法调用时通过 InvocationHandler 拦截并增强（在父类方法的基础上进行包装），调用通过Proxy.newProxyInstance自动创建代理对象，并转发给InvocationHandler ，里面invoke方法有参数是method，使用反射执行方法，在方法前后对方法进行增强
