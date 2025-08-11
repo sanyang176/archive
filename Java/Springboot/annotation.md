@@ -1,6 +1,4 @@
 ## 普通注解
-controller
-service
 repository
 component
 autowired
@@ -29,7 +27,7 @@ enablewebsecurity
 enableglobalmethodsecurity
 controlleradvice
 exceptionhandler
-SpringBootApplication 启动类
+SpringBootApplication 启动类<br />
 EnableAutoConfiguration在启动类中隐式包含，读取META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports路径下的类名，在springapplication.run时，内部调用loadfactories加载所有autoconfiguration类
 contorller控制器，
 requestmapping 管理请求的，可以定义请求类型等
