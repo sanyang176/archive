@@ -29,15 +29,36 @@ enablewebsecurity
 enableglobalmethodsecurity
 controlleradvice
 exceptionhandler
+SpringBootApplication 启动类
+EnableAutoConfiguration在启动类中隐式包含，读取META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports路径下的类名，在springapplication.run时，内部调用loadfactories加载所有autoconfiguration类
+contorller控制器，
+requestmapping 管理请求的，可以定义请求类型等
+service服务 
+mapping dao层
+configuration 代码形式的配置文件
+bean标注一个属性/方法，可以给spring管理
+autowired 依赖注入其他service，按照type查找
+resource 可以按照name查找，也可以按照type查找
+Qualifier 可以获取指定的接口实现
+scope定义Bean的生命周期，单例，原型类型
+lazy懒加载
+transaction启动事务管理
+value 注入常量
+component 泛指，controller，service，configuration这些都属于componrnt
+pathvariable url路径变量
+entity 标注的实体类
+table 数据库表名
+repository 具有更高抽象的方法，一般mapping里面是简单的增删改查
+exceptionhandler 方法注解，遇到异常
 ## AOP 相关注解:
 aspect
-before
-after
+before 在切面方法之前执行
+after 在切面方法之后执行
 afterreturning
 afterthrowing
-around
+around 在切面方法执行时添加前后逻辑
 pointcut
 order
 ## 单元测试相关注解:
-springboottest
-test
+springboottest 单元测试启动完整的springboot
+test 标注方法为测试方法
