@@ -93,6 +93,4 @@ var result = paymentService.GetPayment();
 assertEquals(result,2);
 }
 }
-}
-}
 ```
