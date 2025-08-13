@@ -53,3 +53,46 @@ order<br />
 ## 单元测试相关注解:
 springboottest 单元测试启动完整的springboot<br />
 test 标注方法为测试方法<br />
+before/after 在测试方法之前/之后执行<br />
+beforeclass/afterclass 再所有测试方法之前/之后执行<br />
+多个参数的测试方法，类似C#xunit中的theory<br />
+```
+@ParameterizedTest
+@ValueSource(ints = {1, 2, 3})
+void testWithValueSource(int argument) {
+    assertTrue(argument > 0 && argument < 4);
+}
+```
+@Ignore：所修饰的测试方法会被测试运行器忽略。<br />
+@RunWith：可以更改测试执行器使用junit测试执行器。<br />
+# Mockito相关：
+mock(Class<T> classToMock)：创建一个类的模拟对象。这是创建模拟对象的基础。<br />
+when(T methodCall)：当你想模拟一个方法调用的返回值时使用。与thenReturn一起使用，可以指定一个方法调用应该返回什么值。<br />
+thenReturn(T value)：与when方法一起使用，用于指定方法调用的返回值。<br />
+doReturn(Object toBeReturned)：一个替代thenReturn的方法，用在当你需要模拟void方法或在spy对象上进行模拟时。<br />
+verify(T mock)：用于验证某个模拟对象的某个方法是否被调用，以及调用的次数。<br />
+any()：在设定模拟行为（如when）或验证（如verify）时，用于表示任何类型和值的参数。<br />
+eq(T value)：用于指定方法调用时期望的具体参数值。<br />
+doNothing()：用于模拟void方法时，指定该方法不执行任何操作。<br />
+doThrow(Throwable... toBeThrown)：用于模拟方法调用时抛出异常。<br />
+spy(T object)：创建一个真实对象的“间谍”或“spy”。这允许你在真实对象上“监视”方法调用，同时还能够覆盖某些方法的行为。<br />
+ArgumentCaptor<T>：用于捕获方法调用时传递的参数，以便后续进行断言。<br />
+times(int wantedNumberOfInvocations)：与verify方法一起使用，用于指定某个方法被调用的具体次数。<br />
+never()：与verify一起使用，用于验证某个方法从未被调用过。<br />
+举例：
+```
+@ExtendWith(MockitoExtension.class)
+public class PaymentServiceTest {
+
+@mock private ProcessorService processorService;
+@Autowired private PaymentService paymentService;
+@Test
+public void ShouldGetPaymentProsessor(){
+  when(processorService.GetProcessor()).thenReturn(1);
+var result = paymentService.GetPayment();
+assertEquals(result,2);
+}
+}
+}
+}
+```
