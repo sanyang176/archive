@@ -85,7 +85,7 @@ never()：与verify一起使用，用于验证某个方法从未被调用过。<
 public class PaymentServiceTest {
 
 @mock private ProcessorService processorService;
-@Autowired private PaymentService paymentService;
+@InjectMocks private PaymentService paymentService;
 @Test
 public void ShouldGetPaymentProsessor(){
   when(processorService.GetProcessor()).thenReturn(1);
