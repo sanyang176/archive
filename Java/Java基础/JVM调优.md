@@ -25,3 +25,24 @@ java在加载类时，会逐级向上委托，直到找到启动类加载器，
 应用程序类加载器加载用户类路径下面的类
 最后到用户自定义的类加载器
 
+jvm调优内容
+1、-Xms2g：初始化推大小为 2g；
+
+2、-Xmx2g：堆最大内存为 2g；
+
+3、-XX:NewRatio=4：设置年轻的和老年代的内存比例为 1:4；
+
+4、-XX:SurvivorRatio=8：设置新生代 Eden 和 Survivor 比例为 8:2；
+
+5、–XX:+UseParNewGC：指定使用 ParNew + Serial Old 垃圾回收器组合；
+
+6、-XX:+UseParallelOldGC：指定使用 ParNew + ParNew Old 垃圾回收器组合；
+
+7、-XX:+UseConcMarkSweepGC：指定使用 CMS + Serial Old 垃圾回收器组合；
+
+8、-XX:+PrintGC：开启打印 gc 信息；
+
+9、-XX:+PrintGCDetails：打印 gc 详细信息；
+
+10、-XX:+HeapDumpOnOutOfMemoryError：当JVM发生OOM时,自动生成DUMP文件。
+
