@@ -16,3 +16,5 @@ jvm架构
 寄存器（程序计数器）：存储指令地址。顺序执行时，存储下一条指令的地址，如果跳转到别的函数，会志向跳转函数的地址
 本地方法栈：调用其它语言的native方法，比如java调c++
 类加载器：双亲委派机制
+![双亲委派机制](https://github.com/sanyang176/archive/blob/main/Java/Java%E5%9F%BA%E7%A1%80/Images/jvm-%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png)
+
