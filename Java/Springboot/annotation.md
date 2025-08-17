@@ -18,9 +18,9 @@ configurationproperties 将properties文件或者yml文件中的配置加载进�
 conditional给出其他注解生效的条件<br />
 enabletransactionmanagerment 事务管理注解，开启事务管理器,对声明了@Transactional的类进行管理<br />
 transactional @Transactional：可以对数据库操作时产生的运行时异常及其子类进行事务回滚<br />
-enablewebsecurity<br />
-enableglobalmethodsecurity<br />
-controlleradvice<br />
+enablewebsecurity 定义web安全配置<br />
+enableglobalmethodsecurity 添加方法访问权限<br />
+controlleradvice controller增强版，用于全局异常处理，数据绑定<br />
 SpringBootApplication 启动类<br />
 EnableAutoConfiguration在启动类中隐式包含，读取META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports路径下的类名，在springapplication.run时，内部调用loadfactories加载所有autoconfiguration类<br />
 contorller控制器，<br />
@@ -42,6 +42,7 @@ entity 标注的实体类<br />
 table 数据库表名<br />
 repository 具有更高抽象的方法，一般mapping里面是简单的增删改查<br />
 exceptionhandler 方法注解，遇到异常<br />
+@ModelAttribute 把url中的信息转换成object格式<br />
 ## AOP 相关注解:
 aspect 一般跟component混用<br />
 before 在切面方法之前执行<br />
