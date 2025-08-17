@@ -12,12 +12,12 @@ requestparam 这个注解主要用于处理常规键值对，很少用来处理�
 requestcontroller/getmapping/postmapping<br />
 configuration标注某个类为配置类<br />
 conponentscan配置springboot扫描的范围，springbootapplication里面也包括了这个注解，默认扫描springboot所在包及其所有的子包<br />
-enablecaching 定义缓存配置类，可以定义结束之后，可以使用举例：@Cacheable(key = "#id", unless = "#result == null")，@CachePut(key = "#product.id")，@CacheEvict(key = "#id")等注解代替增删改查功能<br />
+enablecaching 定义缓存配置类，可以定义结束之后，可以使用举例：查@Cacheable(key = "#id", unless = "#result == null")，增改@CachePut(key = "#product.id")，删@CacheEvict(key = "#id")等注解代替增删改查功能<br />
 value对数值进行依赖注入<br />
-configurationproperties<br />
-conditional<br />
-enabletransactionmanagerment<br />
-transactional<br />
+configurationproperties 将properties文件或者yml文件中的配置加载进来，比如@ConfigurationProperties(prefix = "app")（application或者yml中肯定有一个名字叫app的配置）<br />
+conditional给出其他注解生效的条件<br />
+enabletransactionmanagerment 事务管理注解，开启事务管理器,对声明了@Transactional的类进行管理<br />
+transactional @Transactional：可以对数据库操作时产生的运行时异常及其子类进行事务回滚<br />
 enablewebsecurity<br />
 enableglobalmethodsecurity<br />
 controlleradvice<br />
