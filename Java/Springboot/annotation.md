@@ -1,17 +1,18 @@
 ## 普通注解
 repository标注DAO层，也可以使用更通用的component<br />
-component通用型注解，使得springboot在运行时将其标注为bean，下面有跟多细化型注解，如controller，service，repository等<br />
 resource @Resource(name = "mysqlDataSource")，首先按照名称依赖注入，如果没找到，按照类型依赖注入<br />
-primary<br />
+primary在装配成bean时，优先装配被这个注解标记的bean<br />
 postconstruct在创建bean之后进行<br />
 postdestory在bean摧毁之前进行<br />
 requsetmapping/requestbody/responcebidy/requestparam：controller层接受url参数的注解<br />
-pathvariable<br />
-requestpart<br />
+pathvariable从url提取至，并作为方法中的参数<br />
+requestpart 这个注解主要用于处理提交的表单（form），包括上传文件<br />
+requestbody 这个注解主要用于处理请求体，包括上传文件<br />
+requestparam 这个注解主要用于处理常规键值对，很少用来处理文件上传<br />
 requestcontroller/getmapping/postmapping<br />
 configuration标注某个类为配置类<br />
-conponentscan<br />
-enablecaching<br />
+conponentscan配置springboot扫描的范围，springbootapplication里面也包括了这个注解，默认扫描springboot所在包及其所有的子包<br />
+enablecaching 定义缓存配置类，可以定义结束之后，可以使用举例：@Cacheable(key = "#id", unless = "#result == null")，@CachePut(key = "#product.id")，@CacheEvict(key = "#id")等注解代替增删改查功能<br />
 value对数值进行依赖注入<br />
 configurationproperties<br />
 conditional<br />
@@ -35,7 +36,7 @@ scope定义Bean的生命周期，单例，原型类型<br />
 lazy懒加载<br />
 transaction启动事务管理<br />
 value 注入常量<br />
-component 泛指，controller，service，configuration这些都属于componrnt<br />
+component 泛指，controller，service，configuration这些都属于componrnt，通用型注解，使得springboot在运行时将其标注为bean，下面有跟多细化型注解，如controller，service，repository等<br />
 pathvariable url路径变量<br />
 entity 标注的实体类<br />
 table 数据库表名<br />
