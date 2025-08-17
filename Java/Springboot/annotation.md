@@ -42,13 +42,13 @@ table 数据库表名<br />
 repository 具有更高抽象的方法，一般mapping里面是简单的增删改查<br />
 exceptionhandler 方法注解，遇到异常<br />
 ## AOP 相关注解:
-aspect<br />
+aspect 一般跟component混用<br />
 before 在切面方法之前执行<br />
 after 在切面方法之后执行<br />
-afterreturning<br />
-afterthrowing<br />
+afterreturning 在切面方法返回之后执行<br />
+afterthrowing 在切面方法抛出异常之后执行<br />
 around 在切面方法执行时添加前后逻辑<br />
-pointcut<br />
+pointcut用来修饰方法，格式为"execution(* com.java.110.Test1.*(...))"<br />
 order<br />
 ## 单元测试相关注解:
 springboottest 单元测试启动完整的springboot<br />
