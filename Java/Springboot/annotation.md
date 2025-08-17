@@ -1,11 +1,11 @@
 ## 普通注解
-repository<br />
-component<br />
-resource<br />
+repository标注DAO层，也可以使用更通用的component<br />
+component通用型注解，使得springboot在运行时将其标注为bean，下面有跟多细化型注解，如controller，service，repository等<br />
+resource @Resource(name = "mysqlDataSource")，首先按照名称依赖注入，如果没找到，按照类型依赖注入<br />
 primary<br />
-postconstruct<br />
-postdestory<br />
-requsetmapping/requestbody/responcebidy/requestparam<br />
+postconstruct在创建bean之后进行<br />
+postdestory在bean摧毁之前进行<br />
+requsetmapping/requestbody/responcebidy/requestparam：controller层接受url参数的注解<br />
 pathvariable<br />
 requestpart<br />
 requestcontroller/getmapping/postmapping<br />
@@ -51,11 +51,13 @@ around 在切面方法执行时添加前后逻辑<br />
 pointcut用来修饰方法，格式为"execution(* com.java.110.Test1.*(...))"<br />
 order，使用时@Order(1)，数字越小越优先执行<br />
 aop注解里面的参数：
-execution(* com.java.110.Test1.*(...))，第一个*表示方法返回值为任意类型，第二个*表示Test类中的任意方法，(...)表示方法参数为任意。对于方法名，也可以使用*匹配，如*To表示所有以To结尾的方法
+execution(\* com.java.110.Test1.\*(...))，第一个*表示方法返回值为任意类型，第二个\*表示Test类中的任意方法，(...)表示方法参数为任意。对于方法名，也可以使用\*匹配，如\*To表示所有以To结尾的方法
 execution表示满足匹配的所有目标类方法
 @annotation表示标注了特定注解的目标方法的连接点
 args：按照方法参数类型匹配
 @args：表示具有特定注解的参数
+@within 按照java包中的具有注解的类来匹配
+@target 按照被调用对象中所对应的类来匹配（两者区别：一个为对应类，一个为对应对象）
 # 单元测试相关注解:
 springboottest 单元测试启动完整的springboot<br />
 test 标注方法为测试方法<br />
