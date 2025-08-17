@@ -49,8 +49,14 @@ afterreturning 在切面方法返回之后执行<br />
 afterthrowing 在切面方法抛出异常之后执行<br />
 around 在切面方法执行时添加前后逻辑<br />
 pointcut用来修饰方法，格式为"execution(* com.java.110.Test1.*(...))"<br />
-order<br />
-## 单元测试相关注解:
+order，使用时@Order(1)，数字越小越优先执行<br />
+aop注解里面的参数：
+execution(* com.java.110.Test1.*(...))，第一个*表示方法返回值为任意类型，第二个*表示Test类中的任意方法，(...)表示方法参数为任意。对于方法名，也可以使用*匹配，如*To表示所有以To结尾的方法
+execution表示满足匹配的所有目标类方法
+@annotation表示标注了特定注解的目标方法的连接点
+args：按照方法参数类型匹配
+@args：表示具有特定注解的参数
+# 单元测试相关注解:
 springboottest 单元测试启动完整的springboot<br />
 test 标注方法为测试方法<br />
 before/after 在测试方法之前/之后执行<br />
