@@ -65,3 +65,23 @@ git show [commit] 显示某次提交的元数据和内容变化<br />
 git show --name-only [commit] 显示某次提交发生变化的文件<br />
 git show [commit]:[filename] 显示某次提交时，某个文件的内容<br />
 git reflog 显示当前分支的最近几次提交<br />
+git fetch [remote] 同步远程分支<br />
+git remote -v 显示所有远程仓库<br />
+git remote show [remote] 显示所有远程仓库<br />
+git remote add [shortname] [url] 增加新的远程仓库，并命名<br />
+git pull [remote] [branch] 取回远程仓库的变化，与本地分支合并<br />
+git push [remote] [branch] 上传本地分支到远程仓库<br />
+git push [remote] --force 强行推送当前分支到远程仓库，即使有冲突<br />
+git push [remote] --all 推送所有分支到远程仓库<br />
+git checkout [file] 恢复暂存区的指定文件到工作区<br />
+git checkout [commit] [file] 恢复某个commit的指定文件到暂存区和工作区<br />
+git checkout . 恢复暂存区的所有文件到工作区<br />
+git reset [file] 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变<br />
+git reset --hard 重置暂存区与工作区，与上一次commit保持一致<br />
+git reset [commit] 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变<br />
+git reset --hard [commit] 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致<br />
+git reset --keep [commit] 重置当前HEAD为指定commit，但保持暂存区和工作区不变<br />
+git revert [commit] 新建一个commit，用来撤销指定commit,后者的所有变化都将被前者抵消，并且应用到当前分支<br />
+git stash 储存一下当前暂存区代码，回滚到上次提交<br />
+git stash pop 加载最顶部的（最新的）stash，并移除该stash<br />
+git archive 生成一个可供发布的压缩包<br />
