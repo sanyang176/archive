@@ -1,4 +1,4 @@
-暂存区：git/index 本地仓库：.git 远程仓库：存储远程分支
+暂存区：git/index 本地仓库：.git 远程仓库：存储远程分支 标签：标识比较重要的commit
 git init 初始化git仓库<br />
 git init [projectname] 新建一个目录，将其初始化为git仓库<br />
 git clone [url] 从远程仓库复制代码<br />
@@ -35,3 +35,33 @@ git branch -d [branch-name] 删除分支<br />
 删除远程分支：<br />
 git push origin --delete [branch-name]<br />
 git branch -dr [remote/branch]<br />
+git tag 列出所有tag<br />
+git tag [tag] 新建一个tag在当前commit<br />
+git tag [tag] [commit] 新建一个tag在指定commit<br />
+git tag -d [tag] 删除本地tag<br />
+git push origin :refs/tags/[tagName] 删除远程tag<br />
+git show [tag] 查看tag信息<br />
+git push [remote] [tag]  提交指定tag<br />
+git push [remote] --tags 提交所有tag<br />
+git checkout -b [branch] [tag] 新建一个分支，指向某个tag<br />
+git status 显示有变更的文件<br />
+git log 显示当前分支的版本历史<br />
+git log --stat 显示commit历史，以及每次commit发生变更的文件<br />
+git log -S [keyword] 搜索提交历史，根据关键词<br />
+git log [tag] HEAD --pretty=format:%s 显示某个commit之后的所有变动，每个commit占据一行<br />
+git log [tag] HEAD --grep feature 显示某个commit之后的所有变动，其"提交说明"必须符合搜索条件<br />
+git log --follow [file] 显示某个文件的版本历史，包括文件改名<br />
+git whatchanged [file] 显示某个文件的版本历史，包括文件改名<br />
+git log -p [file] 显示指定文件相关的每一次diff<br />
+git log -5 --pretty --oneline 显示过去5次提交<br />
+git shortlog -sn 显示所有提交过的用户，按提交次数排序<br />
+git blame [file] 显示指定文件是什么人在什么时间修改过<br />
+git diff 显示暂存区和工作区的差异<br />
+git diff --cached [file] 显示暂存区和上一个commit的差异<br />
+git diff HEAD 显示工作区与当前分支最新commit之间的差异<br />
+git diff [first-branch]...[second-branch] 显示两次提交之间的差异<br />
+git diff --shortstat "@{0 day ago}" 显示今天你写了多少行代码<br />
+git show [commit] 显示某次提交的元数据和内容变化<br />
+git show --name-only [commit] 显示某次提交发生变化的文件<br />
+git show [commit]:[filename] 显示某次提交时，某个文件的内容<br />
+git reflog 显示当前分支的最近几次提交<br />
